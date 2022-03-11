@@ -16,6 +16,7 @@ import './assets/css/plugin/nice-select.css'
 import './assets/css/plugin/animate.css'
 import './assets/css/style.css'
 import './assets/css/responsive.css'
+import Subscribe from './components/Subscribe/Subscribe';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <Exchange />
       <Transfer />
       <Faq />
+      <Subscribe />
       <Footer />
     </div>
   );
