@@ -11,6 +11,30 @@ export default function Navbar() {
             $(this).addClass("active");
           });
           $("select").niceSelect();
+          
+          /* sticky navigation menu */
+    var lastScrollTop = "";
+    $(window).on("scroll", function () {
+      var $window = $(window);
+      if ($window.scrollTop() > 0) {
+        $(".mein-menu").addClass("nav-fixed");
+      } else {
+        $(".mein-menu").removeClass("nav-fixed");
+      }
+
+      /*---------------------------
+         back to top show / hide
+     ---------------------------*/
+      var st = $(this).scrollTop();
+      if ($(window).scrollTop() > 500) {
+        $("#scrollUp").fadeIn();
+      } else {
+        $("#scrollUp").fadeOut();
+      }
+      lastScrollTop = st;
+    });
+
+      
       }, []);
    
   return (
