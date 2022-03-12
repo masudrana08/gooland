@@ -18,3 +18,7 @@ select{
   background: transparent
 }
 
+.rates .main-chart .chart-box{
+  box-sizing: border-box;
+  overflow: hidden;
+}
