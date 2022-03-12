@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react'
 import logo from './logo.svg';
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
@@ -17,21 +18,40 @@ import './assets/css/plugin/animate.css'
 import './assets/css/style.css'
 import './assets/css/responsive.css'
 import './App.css';
+import $ from "jquery";
+import WOW from 'wowjs'
+window.jQuery = $
 
 function App() {
 
+useEffect(()=>{
+  $(window).on("load", function () {
+    /*Preloader*/
+    $('.preloader').fadeOut(1000);
+    var img = $('.bg_img');
+    img.css('background-image', function () {
+      var bg = ('url(' + $(this).data('background') + ')');
+      return bg;
+    });
+  });
+
+  new WOW.WOW({
+    live: false
+}).init();
+},[])
   return (
     <div>
         {/* <!-- ==========Preloader========== --> */}
-        {/* <div class="preloader">
-            <div class="preloader-inner">
-                <div class="preloader-icon">
+        <div className="preloader">
+            <div className="preloader-inner">
+                <div className="preloader-icon">
                     <span></span>
                     <span></span>
                 </div>
             </div>
-        </div> */}
+        </div>
       {/* <!-- ==========Preloader========== --> */}
+
       <Navbar />
       <Header />
       <How />

@@ -2,6 +2,7 @@ import React from 'react'
 import Rdot1 from "../../assets/img/rdot-1.png"
 import Rdot2 from "../../assets/img/rdot-3.png"
 import BtcImg from "../../assets/img/btc.png"
+import MyChart from '../Custom/MyChart'
 
 export default function Exchange() {
   return (
@@ -70,11 +71,12 @@ export default function Exchange() {
                                     <a href="#" className="link">Last Month</a>
                                 </div>
                             </div>
-                            <div className="chart wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            {/* <div className="chart wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
                                 <div id="chart">
                                     <div id="timeline-chart"></div>
                                 </div>
-                            </div>
+                            </div> */}
+                            <MyChart />
                         </div>
                     </div>
                 </div>

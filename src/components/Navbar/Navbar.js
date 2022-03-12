@@ -1,6 +1,7 @@
 import React,{ useEffect, useRef } from 'react'
 import Logo from '../../assets/img/logo.png'
 import $ from "jquery";
+window.jQuery = $
 require("jquery-nice-select");
 
 export default function Navbar() {
