@@ -11,7 +11,7 @@ export default function MyChart() {
       height: 350,
       type: 'area',
       zoom: {
-        enabled: false
+        enabled: true
       }
     },
     dataLabels: {
