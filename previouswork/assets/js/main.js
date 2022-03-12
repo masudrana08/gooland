@@ -1,3 +1,9 @@
+
+$("button").click(function(){
+    $.get("demo_test.asp", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
 $(function ($) {
   "use strict";
 
@@ -33,7 +39,7 @@ $(function ($) {
     });
 
     /* Wow js */
-    new WOW().init();
+    // new WOW().init();
 
     /*back to top-*/
     $(document).on("click", "#scrollUp", function () {

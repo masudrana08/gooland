@@ -8,11 +8,35 @@ import Coin6 from "../../assets/img/coin/6.png"
 import Coin7 from "../../assets/img/coin/7.png"
 import Coin8 from "../../assets/img/coin/8.png"
 import BannerBg2 from "../../assets/img/banner-bg-2.png"
+import { Button, Modal } from 'react-bootstrap'
+
+
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body style={{height:'80vh'}}>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4DCTTrGjGU4?autoplay=1&controls=0" controls="false" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </Modal.Body>
+      </Modal>
+    );
+  }
 
 export default function Header() {
+    const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+      
     <div className="banner headerBanner" id="transfer" >
+       
         <div className="man">
             <img src={Coin1} alt="" className="coin-1" />
             <img src={Coin2} alt="" className="coin-2" />
@@ -38,12 +62,14 @@ export default function Header() {
 
                             <div className="vide">
                                 <div className="video-box">
-                                    <div className="video-img">
-                                        <a className="youtube-video mfp-iframe video-play-btn video-icon"
-                                            href="https://www.youtube.com/watch?v=4DCTTrGjGU4">
+                                   
+                                    <div className="video-img" onClick={() => setModalShow(true)}>
+                                        <div className="youtube-video mfp-iframe video-play-btn video-icon" >
                                             <i className="fas fa-play"></i>
-                                        </a>
+                                        </div>
                                     </div>
+                                 
+                                    
                                     <div className="video-text">
                                         <p className="text">Watch Video Now</p>
                                         <span><i className="far fa-clock"></i> 2:32 minutes</span>

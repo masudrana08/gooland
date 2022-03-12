@@ -11,3 +11,10 @@
 .footerBg{
   background-image: url('assets/img/footer-bg.png')
 }
+
+
+select{
+  border: none;
+  background: transparent
+}
+

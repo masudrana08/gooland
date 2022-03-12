@@ -1,8 +1,19 @@
-import React from 'react'
+import React,{ useEffect, useRef } from 'react'
 import Logo from '../../assets/img/logo.png'
+import $ from "jquery";
+require("jquery-nice-select");
+
 export default function Navbar() {
+    useEffect(() => {
+        $(".nav-link").click(function () {
+            $(".nav-link").removeClass("active");
+            $(this).addClass("active");
+          });
+          $("select").niceSelect();
+      }, []);
+   
   return (
-    <div>
+    <>
       {/* <!-- Main-menu Strat --> */}
     <div className="mein-menu">
         <nav className="navbar navbar-expand-lg navbar-dark ">
@@ -15,7 +26,7 @@ export default function Navbar() {
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                <div className="collapse navbar-collapse" id="navbarNavDropdown" style={{position:'sticky', top:'100px'}}>
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <a className="nav-link" aria-current="page" href="#transfer">Transfer</a>
@@ -50,6 +61,6 @@ export default function Navbar() {
         </nav>
     </div>
     {/* <!-- Main-menu End --> */}
-    </div>
+    </>
   )
 }
